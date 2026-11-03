@@ -79,7 +79,7 @@ export default function AdminDashboard() {
           <div className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] flex flex-col justify-between">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                AI Engine Status
+                AI Model Status
               </span>
               <Activity className={`w-4 h-4 ${
                 data.mlHealth?.status === 'ONLINE' ? 'text-emerald-500' :

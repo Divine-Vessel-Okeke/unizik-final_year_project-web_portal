@@ -1,4 +1,4 @@
-# Predictive Fraud Detection System for University E-Payment Portals (Final Year Project) — Frontend
+# Design and Implementation of a Predictive Fraud Detection System for University E-payment Portals using Decision Tree Classification (Final Year Project) — Web Portal
 
 ## Setup Instructions
 
@@ -21,13 +21,13 @@
 
    ```
    npx prisma generate
-   npx prisma migrate dev --name init
+   npx prisma migrate deploy
    npx prisma db seed
    ```
 
    The seed creates demo accounts:
 
-   - Student: `2022514001` / `password123`
+   - Students: `2022514001` / `password123` AND `2022514009` / `password123`
    - Admin: `admin` / `admin123`
 
 ## Execution
@@ -38,4 +38,4 @@
    npm run dev
    ```
 
-   Portal available at `http://localhost:3000`.
+   Portal should be available at `http://localhost:3000`.

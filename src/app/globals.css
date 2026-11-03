@@ -2,25 +2,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* Tailwind v4 native configuration design system */
   --color-unizik-blue: #001C3D;
   --color-unizik-orange: #F58220;
   --color-unizik-bg: #F8FAFC;
 }
 
-/* Use standard native CSS properties bound to your theme utilities */
 body {
   background-color: var(--color-unizik-bg);
   color: var(--color-slate-900);
   font-family: 'Inter', sans-serif;
 }
 
-/* Modern Card Effect */
 .card-glass {
   @apply bg-white border border-slate-200 shadow-sm rounded-xl;
 }
 
-/* Official Action Button */
 .btn-primary {
   @apply bg-unizik-orange hover:bg-orange-600 text-white font-semibold py-2.5 px-5 rounded-lg transition-all;
 }

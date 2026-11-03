@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Initiating UNIZIK Ledger Seeding Protocol...');
+  console.log('🌱 Seeding database...');
 
   // 1. Wipe old records
   await prisma.appeal.deleteMany();
@@ -24,12 +24,12 @@ async function main() {
     data: {
       username: 'admin',
       password: adminPasswordHash,
-      fullName: 'Dr. Prof. B.O. Ekeh (Chief Bursary Officer)',
+      fullName: 'Dr. Prof. B.O. Ekeh',
       role: 'BURSARY_DIRECTOR',
     },
   });
 
-  // 3. Create Student 1: Normal Undergraduate Account (Chinedu)
+  // 3. Create Student 1 (Chinedu)
   const student1 = await prisma.student.create({
     data: {
       matricNumber: '2022514001',
@@ -39,7 +39,7 @@ async function main() {
       lastName: 'Okafor',
       department: 'Computer Science',
       level: 400,
-      loginDeviceId: 'UNIZIK_FP_CLEAN_BASELINE_CHINEDU',
+      loginDeviceId: 'UNIZIK_FP_SEED_CHINEDU',
     },
   });
 
@@ -53,7 +53,7 @@ async function main() {
     },
   });
 
-  // 4. Create Student 2: High-Risk Attack Target Account (Sohail)
+  // 4. Create Student 2 (Sohail)
   const student2 = await prisma.student.create({
     data: {
       matricNumber: '2022514009',
@@ -63,7 +63,7 @@ async function main() {
       lastName: 'Abdel',
       department: 'Computer Science',
       level: 400,
-      loginDeviceId: 'UNIZIK_FP_ORIGINAL_SOHAIL_LAPTOP',
+      loginDeviceId: 'UNIZIK_FP_SEED_SOHAIL',
     },
   });
 
@@ -77,17 +77,17 @@ async function main() {
     },
   });
 
-  console.log('✅ Seeding Complete! Demo Login Credentials Established:');
+  console.log('✅ Seeding Complete!');
   console.log('----------------------------------------------------------------');
-  console.log('[NORMAL STUDENT] Matric: 2022514001  | Pass: password123');
-  console.log('[ATTACK TARGET]  Matric: 2022514009  | Pass: password123');
-  console.log('[ADMIN COMMAND]  User:   admin        | Pass: admin123');
+  console.log('[STUDENT] Matric: 2022514001 (Chinedu) | Pass: password123');
+  console.log('[STUDENT] Matric: 2022514009 (Sohail)  | Pass: password123');
+  console.log('[ADMIN]   User:   admin                 | Pass: admin123');
   console.log('----------------------------------------------------------------');
 }
 
 main()
   .catch((e) => {
-    console.error('❌ Fatal error during database seeding:', e);
+    console.error('❌ Error:', e);
     process.exit(1);
   })
   .finally(async () => {
