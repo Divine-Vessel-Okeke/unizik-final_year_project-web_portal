@@ -441,7 +441,7 @@ export default function AdminAppealsPage() {
                 <div className="grid grid-cols-1 gap-1.5">
                   {[
                     "Device fingerprint does not match login baseline.",
-                    "Network origin not among the 5 major Nigerian telcos (MTN, Glo, Airtel, 9Mobile, Etisalat) during checkout attempt.",
+                    "Network origin is not among the major Nigerian telcos.",
                     "Visit the admin office to explain.",
                   ].map((template, idx) => (
                     <button
